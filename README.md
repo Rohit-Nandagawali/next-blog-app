@@ -1,6 +1,7 @@
 # Vichaar - The Next.js Blogging App 🚀
 
-Welcome to the Vichaar - The Next.js Blogging App repository! This web application is a feature-rich blogging platform built using Next.js, Meraki UI, Tailwind CSS, React, and Firebase as the backend. It offers a wide range of functionalities to create, manage, and interact with blogs and comments.
+Welcome to the Vichaar - The Next.js Blogging App repository! This web application is a feature-rich blogging platform built using Next.js, Meraki UI, Tailwind CSS, React, and Firebase as the backend. It offers a wide range of functionalities to create, and interact with blogs and comments.
+Share Your Vichaar!
 
 ## Demo
 https://github.com/Rohit-Nandagawali/next-blog-app/assets/85486891/768abf81-f871-4f81-a59b-77edc9e2a16d
@@ -25,7 +26,7 @@ https://github.com/Rohit-Nandagawali/next-blog-app/assets/85486891/768abf81-f871
 
 ## Getting Started 🏁
 
-Follow these steps to get [Your Next.js Blogging App] up and running on your local machine:
+Follow these steps to get Vichaar - The Your Next.js Blogging App up and running on your local machine:
 
 
  1. **Clone the Repository**: Begin by cloning this repository to your local machine. Open your terminal and run the following command:
