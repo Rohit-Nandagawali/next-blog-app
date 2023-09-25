@@ -4,6 +4,10 @@ import { collection, doc, addDoc, getDoc, getDocs } from "firebase/firestore";
 import { useRouter } from 'next/router';
 import toast, { Toaster } from 'react-hot-toast';
 import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import { atomOneDarkReasonable } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import remarkGfm from 'remark-gfm'
 
 const options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
 
@@ -51,7 +55,33 @@ export default function BlogPage({ blog, user, allComments }) {
 
                 <img className="object-cover border mt-8 object-center w-full h-80 xl:h-[28rem] rounded-xl" src={blog.imageUrl} alt={blog.title} />
 
-                <p className=" text-xl text-gray-800 mt-4">{blog.body}</p>
+                <p className=" text-xl text-gray-800 mt-4">
+                    <ReactMarkdown
+                        children={blog.body}
+                        className='prose'
+                        remarkPlugins={[remarkGfm]}
+                        components={{
+                            code({ node, inline, className, children, ...props }) {
+                                const match = /language-(\w+)/.exec(className || '')
+                                return !inline && match ? (
+                                    <SyntaxHighlighter
+                                        showInlineLineNumbers={true}
+                                        {...props}
+                                        children={String(children).replace(/\n$/, '')}
+                                        style={atomOneDarkReasonable}
+                                        language={match[1]}
+                                        PreTag="div"
+                                    />
+                                ) : (
+                                    <code {...props} className={className}>
+                                        {children}
+                                    </code>
+                                )
+                            }
+                        }}
+                    />
+
+                </p>
 
                 <div className="mt-6 flex flex-col">
                     <hr />
