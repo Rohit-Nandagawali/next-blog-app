@@ -1,10 +1,21 @@
-# Vichaar - The Next.js Blogging App 🚀
+# Vichaar 2.0 - Bringing Blogging to the Next Level!  🚀
 
-Welcome to the Vichaar - The Next.js Blogging App repository! This web application is a feature-rich blogging platform built using Next.js, Meraki UI, Tailwind CSS, React, and Firebase as the backend. It offers a wide range of functionalities to create, and interact with blogs and comments.
+Welcome to the Vichaar 2.0 - The Next.js Blogging App repository! This web application is a feature-rich blogging platform built using Next.js, Meraki UI, Tailwind CSS, React, and Firebase as the backend. It offes a wide range of functionalities to create, and interact with blogs and comments.
 Share Your Vichaar!
+
+## What's New in Vichaar 2.0:
+
+- **Markdown Support:** Now, unleash your creativity with rich text formatting, tables, links, and the ability to include code snippets using Markdown.
+
+- **Syntax Highlighting:** Your code snippets shine brighter with syntax highlighting for a cleaner, more readable experience.
+
+## Deployed project
+Check out the deployed project here: [Vichaar 2.0](https://next-blog-app-psi.vercel.app)
+
 
 ## Demo
 https://github.com/Rohit-Nandagawali/next-blog-app/assets/85486891/768abf81-f871-4f81-a59b-77edc9e2a16d
+
 
 ## Features 🌟
 
