@@ -152,7 +152,6 @@ export default function CreatePost({ user }) {
                 <div className="border  px-4 py-2.5 mt-2 rounded-lg">
 
                     <ReactMarkdown
-                        children={body}
                         className='prose'
                         remarkPlugins={[remarkGfm]}
                         components={{
@@ -162,11 +161,12 @@ export default function CreatePost({ user }) {
                                     <SyntaxHighlighter
                                         showInlineLineNumbers={true}
                                         {...props}
-                                        children={String(children).replace(/\n$/, '')}
                                         style={atomOneDarkReasonable}
                                         language={match[1]}
                                         PreTag="div"
-                                    />
+                                    >
+                                        {String(children).replace(/\n$/, '')}
+                                    </SyntaxHighlighter>
                                 ) : (
                                     <code {...props} className={className}>
                                         {children}
@@ -174,7 +174,10 @@ export default function CreatePost({ user }) {
                                 )
                             }
                         }}
-                    />
+                    >
+                        {body}
+                    </ReactMarkdown>
+
                 </div>
 
 

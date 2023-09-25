@@ -55,9 +55,8 @@ export default function BlogPage({ blog, user, allComments }) {
 
                 <img className="object-cover border mt-8 object-center w-full h-80 xl:h-[28rem] rounded-xl" src={blog.imageUrl} alt={blog.title} />
 
-                <p className=" text-xl text-gray-800 mt-4">
+                <div className=" text-xl text-gray-800 mt-4">
                     <ReactMarkdown
-                        children={blog.body}
                         className='prose'
                         remarkPlugins={[remarkGfm]}
                         components={{
@@ -67,11 +66,12 @@ export default function BlogPage({ blog, user, allComments }) {
                                     <SyntaxHighlighter
                                         showInlineLineNumbers={true}
                                         {...props}
-                                        children={String(children).replace(/\n$/, '')}
                                         style={atomOneDarkReasonable}
                                         language={match[1]}
                                         PreTag="div"
-                                    />
+                                    >
+                                        {String(children).replace(/\n$/, '')}
+                                    </SyntaxHighlighter>
                                 ) : (
                                     <code {...props} className={className}>
                                         {children}
@@ -79,9 +79,11 @@ export default function BlogPage({ blog, user, allComments }) {
                                 )
                             }
                         }}
-                    />
+                    >
+                        {blog.body}
+                    </ReactMarkdown>
 
-                </p>
+                </div>
 
                 <div className="mt-6 flex flex-col">
                     <hr />
